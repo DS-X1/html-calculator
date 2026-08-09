@@ -1,0 +1,28 @@
+* {
+	font-family: sans-serif;
+}
+
+#calc-container {
+	display: flex;
+	flex-direction: column;
+	width: 30%;
+	margin: auto;
+}
+
+#calc-button-grid {
+	display: grid;
+	grid-template-columns: repeat(4, 1fr);
+	gap: 10px;
+}
+
+#calc-display {
+	text-align: right;
+	margin: 1.4em;
+	font-size: 1.5em;
+}
+
+#expression-display {
+	text-align: right;
+	opacity: 0.5;
+	font-size: 1.3em;
+}
