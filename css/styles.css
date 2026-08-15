@@ -2,16 +2,29 @@
 	font-family: sans-serif;
 }
 
+html, body {
+  height: 100%;
+}
+
 #calc-container {
 	display: flex;
 	flex-direction: column;
 	width: 30%;
+	height: 80%;
 	margin: auto;
+}
+
+@media (max-width: 600px) {
+	#calc-container {
+	width: 90%;
+	height: 70%;
+	}
 }
 
 #calc-button-grid {
 	display: grid;
 	grid-template-columns: repeat(4, 1fr);
+	flex-grow: 1;
 	gap: 10px;
 }
 
