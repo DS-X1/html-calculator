@@ -41,6 +41,17 @@ function appendToDisplay(event) {
 		return
 	}
 	
+	if (btn.id === "button-backspace") {
+		//Prevents displaybox from going completely blank
+		if (displayBox.innerHTML.length === 1) {
+			displayBox.innerHTML = "0";
+			return;
+			};
+		
+		displayBox.innerHTML = displayBox.innerHTML.slice(0, -1);
+		return
+	}
+	
 	
 	btnText = btn.textContent;
 	displayBox.innerHTML += btnText;
@@ -61,18 +72,18 @@ document.addEventListener("keydown", (event) => {
 	key = event.key;
 	console.log(`${key}`);
 	
-	if (key === "Backspace") {
-		displayBox.innerHTML = displayBox.innerHTML.slice(0, -1);
-		
-		//Prevents displaybox from going completely blank
-		if (displayBox.innerHTML === "") {displayBox.innerHTML = "0"};
-	};
+	if (key === "Backspace") {clickButton("button-backspace");};
 	
 	if (key === "c") {clickButton("button-c");};
 	
 	if (key === "/") {
 		event.preventDefault();
 		clickButton("button-div");
+	};
+	
+	if (key === "=" || key === "Enter") {
+		event.preventDefault();
+		clickButton("button-equal");
 	};
 	
 	if (key === "*") {clickButton("button-multi");};
@@ -86,7 +97,7 @@ document.addEventListener("keydown", (event) => {
 	if (key === "4") {clickButton("button-4");};
 	if (key === "5") {clickButton("button-5");};
 	if (key === "6") {clickButton("button-6");};
-	if (key === "=" || key === "Enter") {clickButton("button-equal");};
+	
 	
 	if (key === "1") {clickButton("button-1");};
 	if (key === "2") {clickButton("button-2");};
